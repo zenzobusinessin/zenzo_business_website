@@ -1,45 +1,6 @@
 import React from 'react';
 
 export default function Pricing() {
-  const plans = [
-    {
-      name: 'Starter',
-      price: '₹2,999',
-      features: [
-        { text: 'Basic Auto-replies', included: true },
-        { text: 'Lead Capture', included: true },
-        { text: '1,000 Messages/mo', included: true },
-        { text: 'AI Chatbot', included: false }
-      ],
-      cta: 'Choose Plan',
-      isPopular: false
-    },
-    {
-      name: 'Growth',
-      price: '₹5,999',
-      features: [
-        { text: 'Everything in Starter', included: true },
-        { text: 'AI Smart Chatbot', included: true },
-        { text: 'Fee Reminders', included: true },
-        { text: '5,000 Messages/mo', included: true }
-      ],
-      cta: 'Get Started',
-      isPopular: true
-    },
-    {
-      name: 'Pro',
-      price: '₹9,999',
-      features: [
-        { text: 'Everything in Growth', included: true },
-        { text: 'Multi-agent Support', included: true },
-        { text: 'Unlimited Broadcasts', included: true },
-        { text: 'API Integration', included: true }
-      ],
-      cta: 'Contact Sales',
-      isPopular: false
-    }
-  ];
-
   const handleScrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) {
@@ -47,57 +8,160 @@ export default function Pricing() {
     }
   };
 
+  const essentials = [
+    {
+      icon: 'bolt',
+      title: 'Blazing Fast Speed',
+      desc: 'Optimized images and clean code for under 2-second load times.'
+    },
+    {
+      icon: 'search',
+      title: 'SEO Ready',
+      desc: 'Structured meta-tags, clean HTML, and sitemaps so Google finds you.'
+    },
+    {
+      icon: 'security',
+      title: 'Secure by Default',
+      desc: 'SSL security encryption setup to keep your site and clients safe.'
+    },
+    {
+      icon: 'devices',
+      title: 'Mobile First',
+      desc: 'Designed to look stunning on iPhones, Androids, and desktops alike.'
+    }
+  ];
+
   return (
-    <section className="py-xl" id="pricing">
+    <section className="py-xl" id="solutions">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
-        <h2 className="font-headline-lg text-headline-lg text-primary text-center mb-xl">Simple, affordable pricing</h2>
-        <div className="grid md:grid-cols-3 gap-md items-stretch">
-          {plans.map((plan, idx) => (
-            <div
-              key={idx}
-              className={`bg-surface-container-lowest border rounded-lg p-lg flex flex-col relative ${
-                plan.isPopular
-                  ? 'border-2 border-primary scale-105 shadow-md z-10 md:my-0 my-4'
-                  : 'border-outline-variant z-0'
-              }`}
-            >
-              {plan.isPopular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-sm py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                  Most Popular
+        <div className="text-center mb-xl">
+          <span className="text-primary font-bold uppercase tracking-wider text-label-sm">Digital Presence</span>
+          <h2 className="font-headline-lg text-headline-lg text-primary mt-base">Websites & E-commerce Solutions</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-sm">
+            High-converting websites and shopping storefronts designed to grow your business, showcase your work, and automate sales.
+          </p>
+        </div>
+
+        {/* Main Split Cards */}
+        <div className="grid md:grid-cols-2 gap-lg items-stretch mb-xl">
+          {/* Business Website Card */}
+          <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm">
+            <div>
+              <div className="flex items-center gap-sm mb-md">
+                <span className="material-symbols-outlined text-primary bg-primary/10 p-sm rounded-lg text-3xl">
+                  language
                 </span>
-              )}
-              <h3 className="font-headline-md text-headline-md mb-xs">{plan.name}</h3>
-              <div className="mb-md">
-                <span className="text-3xl font-bold text-primary">{plan.price}</span>
-                <span className="text-on-surface-variant">/mo</span>
+                <div>
+                  <h3 className="font-headline-md text-headline-md text-on-surface">Custom Business Websites</h3>
+                  <p className="text-label-sm text-primary font-semibold">Perfect for services, schools, & local businesses</p>
+                </div>
               </div>
-              <ul className="space-y-sm mb-xl flex-grow">
-                {plan.features.map((feat, fIdx) => (
-                  <li
-                    key={fIdx}
-                    className={`flex items-center gap-xs text-body-md ${
-                      !feat.included ? 'opacity-40' : ''
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'wght' 600" }}>
-                      check
-                    </span>
-                    {feat.text}
-                  </li>
-                ))}
+              
+              <p className="text-on-surface-variant text-body-md mb-lg">
+                Establish authority, showcase your services, and capture user leads 24/7. Perfect for coaching centers, clinics, real estate, and professional consulting firms in Hyderabad.
+              </p>
+
+              <h4 className="font-label-md text-label-md text-on-surface mb-sm">Key Features Included:</h4>
+              <ul className="space-y-sm mb-lg">
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Custom Homepage & Service Showcases
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Interactive Contact & Lead Capture Forms
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  WhatsApp Quick-Chat Widget Integration
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Google Maps & Local Search SEO setup
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Content Management System (CMS) for blogs/updates
+                </li>
               </ul>
-              <button
-                onClick={handleScrollToContact}
-                className={`w-full py-sm rounded-lg font-label-md transition-all cursor-pointer ${
-                  plan.isPopular
-                    ? 'bg-primary text-on-primary hover:bg-opacity-90'
-                    : 'border border-primary text-primary hover:bg-primary/5'
-                }`}
-              >
-                {plan.cta}
-              </button>
             </div>
-          ))}
+
+            <button
+              onClick={handleScrollToContact}
+              className="w-full bg-primary text-on-primary py-sm rounded-lg font-label-md hover:bg-opacity-90 transition-all cursor-pointer mt-md"
+            >
+              Inquire About Business Website
+            </button>
+          </div>
+
+          {/* E-commerce Store Card */}
+          <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm relative overflow-hidden">
+            <span className="absolute top-4 right-4 bg-secondary text-on-secondary px-sm py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+              Scalable E-com
+            </span>
+            <div>
+              <div className="flex items-center gap-sm mb-md">
+                <span className="material-symbols-outlined text-secondary bg-secondary/10 p-sm rounded-lg text-3xl">
+                  shopping_bag
+                </span>
+                <div>
+                  <h3 className="font-headline-md text-headline-md text-on-surface">E-commerce Stores</h3>
+                  <p className="text-label-sm text-secondary font-semibold">Perfect for retail, products, & clothing brands</p>
+                </div>
+              </div>
+
+              <p className="text-on-surface-variant text-body-md mb-lg">
+                Sell physical or digital items directly to customers. We build powerful catalog systems, smooth checkouts, and clean admin portals to manage your sales, customers, and inventory.
+              </p>
+
+              <h4 className="font-label-md text-label-md text-on-surface mb-sm">Key Features Included:</h4>
+              <ul className="space-y-sm mb-lg">
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Interactive Product Catalog & Filters
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Secure Checkout with Razorpay / GPay / UPI
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Inventory Management & Admin Sales Dashboard
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Automated Order Invoice & WhatsApp Alert system
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Discount Coupon & Promotional Codes engine
+                </li>
+              </ul>
+            </div>
+
+            <button
+              onClick={handleScrollToContact}
+              className="w-full border-2 border-secondary text-secondary py-sm rounded-lg font-label-md hover:bg-secondary/5 transition-all cursor-pointer mt-md"
+            >
+              Inquire About E-commerce Store
+            </button>
+          </div>
+        </div>
+
+        {/* Core Web Essentials */}
+        <div className="bg-surface-container-high/40 rounded-2xl p-lg border border-outline-variant/40">
+          <h3 className="font-headline-md text-headline-md text-center text-on-surface mb-lg">Standard in Every Project</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
+            {essentials.map((item, idx) => (
+              <div key={idx} className="text-center flex flex-col items-center">
+                <span className="material-symbols-outlined text-primary text-3xl mb-xs">
+                  {item.icon}
+                </span>
+                <h4 className="font-label-md text-label-md text-on-surface mb-1">{item.title}</h4>
+                <p className="text-on-surface-variant text-label-sm max-w-[180px]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

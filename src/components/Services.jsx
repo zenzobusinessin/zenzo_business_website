@@ -3,34 +3,34 @@ import React from 'react';
 export default function Services() {
   const services = [
     {
-      icon: 'quickreply',
-      title: 'Instant auto-replies',
-      desc: 'Instantly respond to FAQs and common queries without lifting a finger.'
+      icon: 'language',
+      title: 'Professional Websites',
+      desc: 'Custom-designed, blazing-fast, and mobile-responsive websites that establish your brand.'
     },
     {
-      icon: 'payments',
-      title: 'Fee & reminder alerts',
-      desc: 'Automated payment reminders and fee collection links for coaching centers.'
+      icon: 'shopping_bag',
+      title: 'E-commerce Solutions',
+      desc: 'Full-featured online stores with product management, shopping cart, and secure UPI/card checkout.'
     },
     {
-      icon: 'person_add',
-      title: 'Lead capture & follow-up',
-      desc: 'Automatically capture details from chat and schedule intelligent follow-ups.'
+      icon: 'chat',
+      title: 'WhatsApp Automation',
+      desc: 'Connect with clients via smart automated responses, bulk announcements, and follow-ups.'
     },
     {
       icon: 'smart_toy',
-      title: 'AI chatbot setup',
-      desc: 'Custom-trained AI agents that understand your business and handle complex queries.'
+      title: 'AI Chatbot Setup',
+      desc: 'Intellectual AI agents custom-trained on your business details to handle complex customer queries.'
     },
     {
-      icon: 'campaign',
-      title: 'Broadcast campaigns',
-      desc: 'Send personalized updates and offers to your entire list with one click.'
+      icon: 'search',
+      title: 'SEO & Online Visibility',
+      desc: 'Structure your site and local profile so customers in Hyderabad and beyond find you first.'
     },
     {
       icon: 'support_agent',
-      title: 'Dedicated support',
-      desc: 'Local Hyderabad support available whenever you need help with your setup.'
+      title: 'Managed Tech Support',
+      desc: 'Domain setup, secure hosting, and reliable local support to keep your site running smoothly.'
     }
   ];
 
@@ -39,7 +39,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center mb-lg">
           <h2 className="font-headline-lg text-headline-lg text-primary">What we do for your business</h2>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-base">Powerful WhatsApp automation tools, set up in 48 hours.</p>
+          <p className="font-body-md text-body-md text-on-surface-variant mt-base">Stunning web design, e-commerce engines, and smart automation built for your growth.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
           {services.map((svc, idx) => (

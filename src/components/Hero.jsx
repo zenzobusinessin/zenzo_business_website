@@ -13,10 +13,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-lg items-center">
         <div className="space-y-md">
           <h1 className="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary leading-tight">
-            Chat Smarter.<br />Grow Faster.
+            Stunning Websites.<br />Smart Automation.
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-            Hyderabad's trusted WhatsApp automation partner for coaching institutes and businesses. Never miss a lead — even at 2 AM.
+            Hyderabad's trusted partner for modern business websites, e-commerce stores, and smart WhatsApp automation. Convert visitors and scale your business 24/7.
           </p>
           <div className="flex flex-wrap gap-sm pt-base">
             <button
@@ -35,11 +35,11 @@ export default function Hero() {
           <div className="pt-lg flex flex-wrap gap-md items-center text-on-surface-variant font-label-sm text-label-sm border-t border-outline-variant/30">
             <span className="flex items-center gap-xs">
               <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-              500+ Businesses Served
+              Custom Web & E-com Design
             </span>
             <span className="flex items-center gap-xs">
-              <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
-              24/7 Automation
+              <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>smart_toy</span>
+              Smart Chat Automation
             </span>
             <span className="flex items-center gap-xs">
               <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>

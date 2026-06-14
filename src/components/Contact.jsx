@@ -5,7 +5,7 @@ export default function Contact() {
     name: '',
     businessName: '',
     phone: '',
-    businessType: 'Coaching Institute',
+    businessType: 'Custom Business Website',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -22,11 +22,11 @@ export default function Contact() {
   const triggerMailto = () => {
     const subject = encodeURIComponent(`New Zenzo Demo Request from ${formData.name || 'Client'}`);
     const body = encodeURIComponent(
-      `Hi Zenzo Solutions,\n\nYou have received a new demo request with the following details:\n\n` +
+      `Hi Zenzo Solutions,\n\nYou have received a new project request with the following details:\n\n` +
       `Name: ${formData.name}\n` +
       `Business Name: ${formData.businessName}\n` +
       `Phone Number: ${formData.phone}\n` +
-      `Business Type: ${formData.businessType}\n` +
+      `Service Needed: ${formData.businessType}\n` +
       `Message: ${formData.message || 'N/A'}\n\n` +
       `Best regards,\n${formData.name || 'Zenzo Landing Page Form'}`
     );
@@ -96,7 +96,7 @@ export default function Contact() {
               <button
                 onClick={() => {
                   setSubmitted(false);
-                  setFormData({ name: '', businessName: '', phone: '', businessType: 'Coaching Institute', message: '' });
+                  setFormData({ name: '', businessName: '', phone: '', businessType: 'Custom Business Website', message: '' });
                 }}
                 className="mt-md text-sm underline cursor-pointer hover:text-opacity-80"
               >
@@ -142,17 +142,17 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block font-label-md text-label-md mb-base">Business Type</label>
+                <label className="block font-label-md text-label-md mb-base">Service Needed</label>
                 <select
                   name="businessType"
                   value={formData.businessType}
                   onChange={handleChange}
                   className="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg bg-surface"
                 >
-                  <option>Coaching Institute</option>
-                  <option>Retail/E-commerce</option>
-                  <option>Healthcare</option>
-                  <option>Service Business</option>
+                  <option>Custom Business Website</option>
+                  <option>E-commerce Store</option>
+                  <option>WhatsApp Automation Bot</option>
+                  <option>Complete Web + Automation Suite</option>
                   <option>Other</option>
                 </select>
               </div>

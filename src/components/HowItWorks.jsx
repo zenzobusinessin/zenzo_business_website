@@ -4,20 +4,20 @@ export default function HowItWorks() {
   const steps = [
     {
       num: 1,
-      title: 'Book a free demo',
-      desc: 'We understand your business needs and show you how automation helps.',
+      title: 'Consult & Strategize',
+      desc: 'We explore your business goals and determine the best web setup and automation flows.',
       hasLine: true
     },
     {
       num: 2,
-      title: 'We build your automation',
-      desc: 'Our team handles the technical setup, API integration, and bot training.',
+      title: 'Design & Build',
+      desc: 'Our team designs your interface, hooks up checkouts, and trains your smart AI bots.',
       hasLine: true
     },
     {
       num: 3,
-      title: 'Watch your business grow',
-      desc: 'Start receiving leads and serving customers 24/7 on autopilot.',
+      title: 'Launch & Scale',
+      desc: 'Go live and start receiving customer orders, capture quality leads, and reply 24/7 automatically.',
       hasLine: false
     }
   ];
