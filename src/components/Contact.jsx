@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,16 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // Story step state to cycle thoughts over Lottie animation
+  const [storyStep, setStoryStep] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStoryStep(prev => (prev + 1) % 4);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -210,11 +221,49 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <div className="mt-xl rounded-lg overflow-hidden h-48 border border-outline-variant grayscale brightness-110">
-            <img
-              alt="Hyderabad Cityscape Map"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnC_UtqtkP7eCCzuuCUPPJnvgjuvcohd5enSc2I-1joFEcQ3ZVIRg9Nhd-VtCpIv2iOAb57g3dkLNlVTh0Zg8iR2UjeSxUDslR5CO7tQDuuueXWMAS3E23Sbo8I4mkEBXU3AadZZMe3zwFLDh-32NFsqw8_XilWY4nSk8vBr8Nl0JJxFuMO6UCuvdoa174XGLK_iMjHJmCIw2VMSD7FuEG8aE_ZgFAlfc-4ugGTUedofoO5dwctmFlrl6RRy8CyUiXh5VuAhkLIu8"
+          {/* Animated Lottie: The Business Owner's Revelation */}
+          <div className="mt-xl overflow-hidden h-64 flex flex-col items-center justify-center bg-transparent relative">
+            {/* Thought Overlay Bubble */}
+            <div className={`absolute top-0 z-20 min-h-[48px] max-w-[85%] bg-surface border border-outline-variant/60 rounded-xl px-md py-xs shadow-md flex items-center gap-xs transition-all duration-500 transform ${
+              storyStep === 3 ? 'border-primary bg-primary/5 scale-105 shadow-lg' : 'translate-y-0'
+            }`}>
+              {storyStep === 0 && (
+                <>
+                  <span className="material-symbols-outlined text-primary text-xl animate-pulse">language</span>
+                  <span className="text-[10px] font-bold text-on-surface">"How to build a business Website?"</span>
+                </>
+              )}
+              {storyStep === 1 && (
+                <>
+                  <span className="material-symbols-outlined text-secondary text-xl animate-pulse">shopping_bag</span>
+                  <span className="text-[10px] font-bold text-on-surface">"How to start E-commerce sales?"</span>
+                </>
+              )}
+              {storyStep === 2 && (
+                <>
+                  <span className="material-symbols-outlined text-primary text-xl animate-pulse">chat</span>
+                  <span className="text-[10px] font-bold text-on-surface">"How to automate customer chats?"</span>
+                </>
+              )}
+              {storyStep === 3 && (
+                <>
+                  <span className="material-symbols-outlined text-primary text-xl animate-bounce" style={{ fontVariationSettings: "'FILL' 1" }}>lightbulb</span>
+                  <span className="text-[10px] font-bold text-primary">"Zenzo: Web + E-com + Automation!"</span>
+                </>
+              )}
+            </div>
+
+            {/* Little connection thought-dot pointers to Lottie guy's head */}
+            <div className="absolute top-14 z-20 flex flex-col gap-[3px] items-center">
+              <span className={`w-2 h-2 rounded-full bg-outline-variant/60 transition-all ${storyStep === 3 ? 'bg-primary/40' : ''}`}></span>
+              <span className={`w-1 h-1 rounded-full bg-outline-variant/40 transition-all ${storyStep === 3 ? 'bg-primary/20' : ''}`}></span>
+            </div>
+
+            <DotLottieReact
+              src="https://lottie.host/d6446dfa-e74e-41e2-b086-8cae8712dd1f/1IPtx7kHNk.lottie"
+              loop
+              autoplay
+              style={{ width: '100%', height: '100%', marginTop: '30px' }}
             />
           </div>
         </div>
