@@ -6,7 +6,7 @@ export default function Contact() {
     name: '',
     businessName: '',
     phone: '',
-    businessType: 'Custom Business Website',
+    businessType: 'Website Design & Development',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -160,8 +160,8 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full border-outline-variant focus:border-primary focus:ring-primary rounded-lg bg-surface"
                 >
-                  <option>Custom Business Website</option>
-                  <option>E-commerce Store</option>
+                  <option>Website Design & Development</option>
+                  <option>Marketing & Scaling Solutions</option>
                   <option>WhatsApp Automation Bot</option>
                   <option>Complete Web + Automation Suite</option>
                   <option>Other</option>
@@ -236,7 +236,7 @@ export default function Contact() {
               {storyStep === 1 && (
                 <>
                   <span className="material-symbols-outlined text-secondary text-xl animate-pulse">shopping_bag</span>
-                  <span className="text-[10px] font-bold text-on-surface">"How to start E-commerce sales?"</span>
+                  <span className="text-[10px] font-bold text-on-surface">"How to design my website?"</span>
                 </>
               )}
               {storyStep === 2 && (
@@ -248,7 +248,7 @@ export default function Contact() {
               {storyStep === 3 && (
                 <>
                   <span className="material-symbols-outlined text-primary text-xl animate-bounce" style={{ fontVariationSettings: "'FILL' 1" }}>lightbulb</span>
-                  <span className="text-[10px] font-bold text-primary">"Zenzo: Web + E-com + Automation!"</span>
+                  <span className="text-[10px] font-bold text-primary">"Zenzo: Web + Design + Automation!"</span>
                 </>
               )}
             </div>

@@ -8,7 +8,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'services', 'how-it-works', 'solutions', 'reviews', 'contact'];
+      const sections = ['home', 'services', 'how-it-works', 'solutions', 'pricing', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -32,8 +32,8 @@ export default function Navbar() {
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },
     { id: 'how-it-works', label: 'How It Works' },
-    { id: 'solutions', label: 'Web & E-commerce' },
-    { id: 'reviews', label: 'Reviews' },
+    { id: 'solutions', label: 'Solutions' },
+    { id: 'pricing', label: 'Pricing' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -53,7 +53,7 @@ export default function Navbar() {
           <span className="text-primary font-headline-md font-bold text-headline-md">Zenzo</span>
           <span className="hidden md:block text-on-surface-variant font-body-md text-body-md">Business Solutions</span>
         </div>
-        <div className="hidden md:flex items-center gap-lg">
+        <div className="hidden md:flex items-center gap-md xl:gap-lg">
           {navLinks.map((link) => (
             <a
               key={link.id}

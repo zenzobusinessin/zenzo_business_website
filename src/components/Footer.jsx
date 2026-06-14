@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-lg mb-xl">
         <div className="col-span-2 md:col-span-1">
           <span className="text-primary-fixed font-headline-md font-bold text-headline-md block mb-md">Zenzo</span>
-          <p className="text-on-surface-variant text-body-md mb-md">Empowering Hyderabad's businesses with custom websites, e-commerce stores, and smart WhatsApp automation.</p>
+          <p className="text-on-surface-variant text-body-md mb-md">Empowering Hyderabad's businesses with custom website design, website development, and smart WhatsApp automation.</p>
           <div className="flex gap-sm">
             <a className="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary transition-all text-on-surface" href="#">FB</a>
             <a className="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary transition-all text-on-surface" href="#">LI</a>
@@ -26,15 +26,15 @@ export default function Footer() {
           <ul className="space-y-sm text-surface-variant">
             <li><a className="hover:text-primary-fixed transition-colors" href="#home" onClick={(e) => handleScrollTo(e, 'home')}>Home</a></li>
             <li><a className="hover:text-primary-fixed transition-colors" href="#services" onClick={(e) => handleScrollTo(e, 'services')}>Services</a></li>
-            <li><a className="hover:text-primary-fixed transition-colors" href="#solutions" onClick={(e) => handleScrollTo(e, 'solutions')}>Web & E-commerce</a></li>
-            <li><a className="hover:text-primary-fixed transition-colors" href="#reviews" onClick={(e) => handleScrollTo(e, 'reviews')}>Reviews</a></li>
+            <li><a className="hover:text-primary-fixed transition-colors" href="#solutions" onClick={(e) => handleScrollTo(e, 'solutions')}>Solutions</a></li>
+            <li><a className="hover:text-primary-fixed transition-colors" href="#pricing" onClick={(e) => handleScrollTo(e, 'pricing')}>Pricing</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-label-md text-label-md mb-md text-on-surface">Services</h4>
           <ul className="space-y-sm text-surface-variant">
             <li><a className="hover:text-primary-fixed transition-colors" href="#solutions">Business Websites</a></li>
-            <li><a className="hover:text-primary-fixed transition-colors" href="#solutions">E-commerce Stores</a></li>
+            <li><a className="hover:text-primary-fixed transition-colors" href="#solutions">Website Development</a></li>
             <li><a className="hover:text-primary-fixed transition-colors" href="#services">WhatsApp Automation</a></li>
             <li><a className="hover:text-primary-fixed transition-colors" href="#services">AI Chatbots</a></li>
           </ul>

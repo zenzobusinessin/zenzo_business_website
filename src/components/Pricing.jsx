@@ -1,10 +1,16 @@
 import React from 'react';
 
 export default function Pricing() {
-  const handleScrollToContact = () => {
+  const handleScrollToContact = (serviceType) => {
     const el = document.getElementById('contact');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+    }
+    const selectEl = document.querySelector('select[name="businessType"]');
+    if (selectEl && serviceType) {
+      selectEl.value = serviceType;
+      const event = new Event('change', { bubbles: true });
+      selectEl.dispatchEvent(event);
     }
   };
 
@@ -35,16 +41,16 @@ export default function Pricing() {
     <section className="py-xl" id="solutions">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center mb-xl">
-          <span className="text-primary font-bold uppercase tracking-wider text-label-sm">Digital Presence</span>
-          <h2 className="font-headline-lg text-headline-lg text-primary mt-base">Websites & E-commerce Solutions</h2>
+          <span className="text-primary font-bold uppercase tracking-wider text-label-sm">Digital Growth</span>
+          <h2 className="font-headline-lg text-headline-lg text-primary mt-base">Web & Scaling Solutions</h2>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-sm">
-            High-converting websites and shopping storefronts designed to grow your business, showcase your work, and automate sales.
+            High-converting website layouts and smart automation systems designed to establish your brand presence and multiply your business growth.
           </p>
         </div>
 
         {/* Main Split Cards */}
         <div className="grid md:grid-cols-2 gap-lg items-stretch mb-xl">
-          {/* Business Website Card */}
+          {/* Website Design & Dev Card */}
           <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm">
             <div>
               <div className="flex items-center gap-sm mb-md">
@@ -52,28 +58,24 @@ export default function Pricing() {
                   language
                 </span>
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-on-surface">Custom Business Websites</h3>
-                  <p className="text-label-sm text-primary font-semibold">Perfect for services, schools, & local businesses</p>
+                  <h3 className="font-headline-md text-headline-md text-on-surface">Website Design & Dev</h3>
+                  <p className="text-label-sm text-primary font-semibold">Perfect for brand presence, portfolios, & local businesses</p>
                 </div>
               </div>
               
               <p className="text-on-surface-variant text-body-md mb-lg">
-                Establish authority, showcase your services, and capture user leads 24/7. Perfect for coaching centers, clinics, real estate, and professional consulting firms in Hyderabad.
+                Create a stunning, responsive website that represents your business, captures qualified leads, and ranks high on Google. Includes domain configuration, secure hosting, custom design, and local SEO setup.
               </p>
 
               <h4 className="font-label-md text-label-md text-on-surface mb-sm">Key Features Included:</h4>
               <ul className="space-y-sm mb-lg">
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Custom Homepage & Service Showcases
+                  Custom Responsive Layouts & Graphics
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Interactive Contact & Lead Capture Forms
-                </li>
-                <li className="flex items-start gap-xs text-body-md">
-                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  WhatsApp Quick-Chat Widget Integration
+                  Interactive Contact & Registration Forms
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
@@ -81,69 +83,73 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Content Management System (CMS) for blogs/updates
+                  CMS Setup for Blogs, Reviews, & Updates
+                </li>
+                <li className="flex items-start gap-xs text-body-md">
+                  <span className="material-symbols-outlined text-primary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
+                  Secure SSL, Domain & Hosting Integration
                 </li>
               </ul>
             </div>
 
             <button
-              onClick={handleScrollToContact}
-              className="w-full bg-primary text-on-primary py-sm rounded-lg font-label-md hover:bg-opacity-90 transition-all cursor-pointer mt-md"
+              onClick={() => handleScrollToContact('Website Design & Development')}
+              className="w-full bg-primary text-on-primary py-sm rounded-lg font-label-md hover:bg-opacity-90 transition-all cursor-pointer mt-md active:scale-95"
             >
-              Inquire About Business Website
+              Inquire About Website Design & Dev
             </button>
           </div>
 
-          {/* E-commerce Store Card */}
+          {/* Marketing & Scaling Card */}
           <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm relative overflow-hidden">
             <span className="absolute top-4 right-4 bg-secondary text-on-secondary px-sm py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-              Scalable E-com
+              Scale Fast
             </span>
             <div>
               <div className="flex items-center gap-sm mb-md">
                 <span className="material-symbols-outlined text-secondary bg-secondary/10 p-sm rounded-lg text-3xl">
-                  shopping_bag
+                  trending_up
                 </span>
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-on-surface">E-commerce Stores</h3>
-                  <p className="text-label-sm text-secondary font-semibold">Perfect for retail, products, & clothing brands</p>
+                  <h3 className="font-headline-md text-headline-md text-on-surface">Marketing & Scaling</h3>
+                  <p className="text-label-sm text-secondary font-semibold">Perfect for lead automation, chatbot support, & broadcast marketing</p>
                 </div>
               </div>
 
               <p className="text-on-surface-variant text-body-md mb-lg">
-                Sell physical or digital items directly to customers. We build powerful catalog systems, smooth checkouts, and clean admin portals to manage your sales, customers, and inventory.
+                Supercharge your customer acquisition and retention. We integrate smart AI chatbots and 24/7 automated WhatsApp message flows to instantly nurture leads, send fee/appointment reminders, and broadcast promotions.
               </p>
 
               <h4 className="font-label-md text-label-md text-on-surface mb-sm">Key Features Included:</h4>
               <ul className="space-y-sm mb-lg">
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Interactive Product Catalog & Filters
+                  Smart AI Chatbots Custom-Trained on Your Business
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Secure Checkout with Razorpay / GPay / UPI
+                  24/7 Automated WhatsApp Follow-ups & Reminders
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Inventory Management & Admin Sales Dashboard
+                  Bulk Broadcast Campaigns to Your Customer Lists
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Automated Order Invoice & WhatsApp Alert system
+                  Instant Lead Sync from Website to WhatsApp Chat
                 </li>
                 <li className="flex items-start gap-xs text-body-md">
                   <span className="material-symbols-outlined text-secondary text-xl mt-[2px]" style={{ fontVariationSettings: "'wght' 600" }}>check</span>
-                  Discount Coupon & Promotional Codes engine
+                  Analytics Dashboard to Track Conversions & ROI
                 </li>
               </ul>
             </div>
 
             <button
-              onClick={handleScrollToContact}
-              className="w-full border-2 border-secondary text-secondary py-sm rounded-lg font-label-md hover:bg-secondary/5 transition-all cursor-pointer mt-md"
+              onClick={() => handleScrollToContact('Marketing & Scaling Solutions')}
+              className="w-full border-2 border-secondary text-secondary py-sm rounded-lg font-label-md hover:bg-secondary/5 transition-all cursor-pointer mt-md active:scale-95"
             >
-              Inquire About E-commerce Store
+              Inquire About Marketing & Scaling
             </button>
           </div>
         </div>

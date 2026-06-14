@@ -8,9 +8,9 @@ export default function Services() {
       desc: 'Custom-designed, blazing-fast, and mobile-responsive websites that establish your brand.'
     },
     {
-      icon: 'shopping_bag',
-      title: 'E-commerce Solutions',
-      desc: 'Full-featured online stores with product management, shopping cart, and secure UPI/card checkout.'
+      icon: 'palette',
+      title: 'Website Design',
+      desc: 'Stunning layouts, intuitive navigation, and beautiful graphics that captivate your local audience.'
     },
     {
       icon: 'chat',
@@ -39,7 +39,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center mb-lg">
           <h2 className="font-headline-lg text-headline-lg text-primary">What we do for your business</h2>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-base">Stunning web design, e-commerce engines, and smart automation built for your growth.</p>
+          <p className="font-body-md text-body-md text-on-surface-variant mt-base">Stunning web design, website development, and smart automation built for your growth.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
           {services.map((svc, idx) => (

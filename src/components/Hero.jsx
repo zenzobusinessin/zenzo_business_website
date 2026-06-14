@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 export default function Hero() {
-  const [activeTab, setActiveTab] = useState('website'); // 'website' | 'ecommerce' | 'whatsapp'
+  const [activeTab, setActiveTab] = useState('website'); // 'website' | 'design' | 'whatsapp'
   
   // Website Form State
   const [webFormState, setWebFormState] = useState('idle'); // 'idle' | 'typing' | 'success'
   const [webFormName, setWebFormName] = useState('');
   
-  // E-commerce Checkout State
-  const [ecomCart, setEcomCart] = useState(0);
-  const [ecomState, setEcomState] = useState('idle'); // 'idle' | 'checking_out' | 'success'
+  // Design Simulator State
+  const [selectedTheme, setSelectedTheme] = useState('Forest Green');
+  const [designState, setDesignState] = useState('idle'); // 'idle' | 'generating' | 'success'
   
   // WhatsApp State
   const [chatMessages, setChatMessages] = useState([
@@ -20,7 +20,6 @@ export default function Hero() {
   const triggerWebFormSimulation = () => {
     if (webFormState !== 'idle') return;
     
-    // If the user already typed a name, submit it directly!
     if (webFormName.trim() !== '') {
       setWebFormState('typing');
       setTimeout(() => {
@@ -33,7 +32,6 @@ export default function Hero() {
       return;
     }
 
-    // Otherwise, simulate auto-typing
     setWebFormState('typing');
     let name = '';
     const targetName = 'Rajesh Kumar';
@@ -55,15 +53,13 @@ export default function Hero() {
     }, 100);
   };
 
-  const triggerCheckoutSimulation = () => {
-    if (ecomState !== 'idle') return;
-    setEcomCart(prev => prev + 1);
-    setEcomState('checking_out');
+  const triggerDesignSimulation = () => {
+    if (designState !== 'idle') return;
+    setDesignState('generating');
     setTimeout(() => {
-      setEcomState('success');
+      setDesignState('success');
       setTimeout(() => {
-        setEcomState('idle');
-        setEcomCart(0);
+        setDesignState('idle');
       }, 3500);
     }, 1200);
   };
@@ -93,7 +89,7 @@ export default function Hero() {
             Stunning Websites.<br />Smart Automation.
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-            Hyderabad's trusted partner for modern business websites, e-commerce stores, and smart WhatsApp automation. Convert visitors and scale your business 24/7.
+            Hyderabad's trusted partner for professional website design, website development, and smart WhatsApp automation. Convert visitors and scale your business 24/7.
           </p>
           <div className="flex flex-wrap gap-sm pt-base">
             <button
@@ -112,7 +108,7 @@ export default function Hero() {
           <div className="pt-lg flex flex-wrap gap-md items-center text-on-surface-variant font-label-sm text-label-sm border-t border-outline-variant/30">
             <span className="flex items-center gap-xs">
               <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-              Custom Web & E-com Design
+              Custom Web Design & Dev
             </span>
             <span className="flex items-center gap-xs">
               <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>smart_toy</span>
@@ -138,18 +134,18 @@ export default function Hero() {
               }`}
             >
               <span className="material-symbols-outlined text-sm">language</span>
-              Website
+              Website Dev
             </button>
             <button
-              onClick={() => setActiveTab('ecommerce')}
+              onClick={() => setActiveTab('design')}
               className={`flex-1 flex items-center justify-center gap-xs py-2 px-sm rounded-lg font-label-md text-xs transition-all cursor-pointer ${
-                activeTab === 'ecommerce'
+                activeTab === 'design'
                   ? 'bg-primary text-on-primary shadow'
                   : 'text-on-surface-variant hover:text-primary hover:bg-surface-container-high/40'
               }`}
             >
-              <span className="material-symbols-outlined text-sm">shopping_bag</span>
-              E-commerce
+              <span className="material-symbols-outlined text-sm">palette</span>
+              Website Design
             </button>
             <button
               onClick={() => setActiveTab('whatsapp')}
@@ -175,7 +171,7 @@ export default function Hero() {
               </div>
               <span className="text-[10px] text-on-surface-variant font-mono bg-surface-container-high px-sm py-[2px] rounded-full">
                 {activeTab === 'website' && 'mybusiness.com'}
-                {activeTab === 'ecommerce' && 'zenzostore.in/shop'}
+                {activeTab === 'design' && 'zenzodesign.in/preview'}
                 {activeTab === 'whatsapp' && 'Zenzo Chatbot Sim v1.2'}
               </span>
               <div className="w-8"></div>
@@ -236,64 +232,65 @@ export default function Hero() {
               </div>
             )}
 
-            {/* TAB 2: E-COMMERCE SHOP */}
-            {activeTab === 'ecommerce' && (
+            {/* TAB 2: WEBSITE DESIGN EDITOR */}
+            {activeTab === 'design' && (
               <div className="space-y-sm flex-grow flex flex-col justify-between">
                 <div className="flex justify-between items-center">
-                  <h4 className="font-headline-md text-label-md font-bold text-secondary">Aroma Roasters</h4>
-                  <div className="relative">
-                    <span className="material-symbols-outlined text-secondary text-xl">shopping_cart</span>
-                    {ecomCart > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center animate-bounce">
-                        {ecomCart}
-                      </span>
-                    )}
-                  </div>
+                  <h4 className="font-headline-md text-label-md font-bold text-secondary">Aroma Café Design</h4>
+                  <span className="text-[10px] bg-secondary/10 text-secondary font-semibold px-xs py-[1px] rounded">
+                    Interactive Editor
+                  </span>
                 </div>
 
+                <p className="text-[11px] text-on-surface-variant">Select a visual style for your brand website:</p>
+
                 <div className="grid grid-cols-2 gap-sm">
-                  <div className="bg-surface-container rounded-lg p-xs border border-outline-variant/30 flex flex-col justify-between">
-                    <span className="material-symbols-outlined text-3xl text-center text-primary mt-1">coffee</span>
-                    <div className="text-center mt-xs">
-                      <p className="text-[10px] font-bold">Hazelnut Coffee</p>
-                      <p className="text-[11px] text-primary font-bold">₹499</p>
-                    </div>
-                  </div>
-                  <div className="bg-surface-container rounded-lg p-xs border border-outline-variant/30 flex flex-col justify-between">
-                    <span className="material-symbols-outlined text-3xl text-center text-primary mt-1">coffee_maker</span>
-                    <div className="text-center mt-xs">
-                      <p className="text-[10px] font-bold">French Press Maker</p>
-                      <p className="text-[11px] text-primary font-bold">₹1,299</p>
-                    </div>
-                  </div>
+                  <button
+                    onClick={() => setSelectedTheme('Forest Green')}
+                    className={`bg-surface-container rounded-lg p-sm border flex flex-col items-center justify-between transition-all cursor-pointer ${
+                      selectedTheme === 'Forest Green' ? 'border-secondary shadow-sm bg-secondary/5' : 'border-outline-variant/30'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-3xl text-primary mt-1">coffee</span>
+                    <p className="text-[10px] font-bold mt-xs">Forest Green</p>
+                  </button>
+                  <button
+                    onClick={() => setSelectedTheme('Warm Caramel')}
+                    className={`bg-surface-container rounded-lg p-sm border flex flex-col items-center justify-between transition-all cursor-pointer ${
+                      selectedTheme === 'Warm Caramel' ? 'border-secondary shadow-sm bg-secondary/5' : 'border-outline-variant/30'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-3xl text-primary mt-1">cookie</span>
+                    <p className="text-[10px] font-bold mt-xs">Warm Caramel</p>
+                  </button>
                 </div>
 
                 <div className="mt-xs">
-                  {ecomState === 'idle' && (
+                  {designState === 'idle' && (
                     <button
-                      onClick={triggerCheckoutSimulation}
+                      onClick={triggerDesignSimulation}
                       className="w-full bg-secondary text-on-secondary py-1.5 rounded text-xs font-semibold hover:bg-opacity-95 transition-all flex items-center justify-center gap-xs cursor-pointer"
                     >
-                      <span className="material-symbols-outlined text-sm">credit_card</span>
-                      Order via UPI Checkout
+                      <span className="material-symbols-outlined text-sm">brush</span>
+                      Apply Custom Design
                     </button>
                   )}
-                  {ecomState === 'checking_out' && (
+                  {designState === 'generating' && (
                     <button
                       disabled
                       className="w-full bg-secondary-container text-on-secondary-container py-1.5 rounded text-xs font-semibold flex items-center justify-center gap-xs"
                     >
                       <span className="w-3 h-3 border-2 border-secondary border-t-transparent rounded-full animate-spin"></span>
-                      Opening UPI Interface...
+                      Generating Mockup...
                     </button>
                   )}
-                  {ecomState === 'success' && (
+                  {designState === 'success' && (
                     <div className="bg-green-500/15 border border-green-500/30 text-green-700 py-1 px-sm rounded text-xs font-medium flex flex-col items-center justify-center text-center animate-bounce">
                       <div className="flex items-center gap-xs">
-                        <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                        <span>UPI Payment Confirmed!</span>
+                        <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>palette</span>
+                        <span>{selectedTheme} Applied!</span>
                       </div>
-                      <p className="text-[9px] text-on-surface-variant font-normal">WhatsApp Confirmation Sent: Invoice #8012</p>
+                      <p className="text-[9px] text-on-surface-variant font-normal">Design preview generated for mybusiness.com</p>
                     </div>
                   )}
                 </div>
@@ -331,7 +328,7 @@ export default function Hero() {
                   <p className="text-[9px] text-on-surface-variant font-bold mb-xs">Tap a response to interact:</p>
                   <div className="flex flex-wrap gap-xs">
                     <button
-                      onClick={() => handleWhatsAppReply("What services do you build?", "We build Professional Websites, fully-integrated E-commerce Stores, and smart AI WhatsApp chat bots.")}
+                      onClick={() => handleWhatsAppReply("What services do you build?", "We build Professional Websites, custom Website Development, and smart AI WhatsApp chat bots.")}
                       className="bg-primary/5 border border-primary/20 text-primary px-sm py-1 rounded-full text-[9px] font-semibold hover:bg-primary/10 transition-colors cursor-pointer"
                     >
                       What services do you build?
@@ -363,8 +360,8 @@ export default function Hero() {
               SEO Rank #1
             </span>
             <span className="flex items-center gap-xs bg-surface-container border border-outline-variant/30 px-sm py-1 rounded-full shadow-sm animate-float">
-              <span className="material-symbols-outlined text-xs text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>payments</span>
-              Secure UPI
+              <span className="material-symbols-outlined text-xs text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>security</span>
+              Secure SSL
             </span>
           </div>
         </div>
