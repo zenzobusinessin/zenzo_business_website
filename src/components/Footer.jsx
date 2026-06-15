@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   const handleScrollTo = (e, id) => {
@@ -13,7 +14,10 @@ export default function Footer() {
     <footer className="bg-inverse-surface text-on-tertiary-fixed pt-xl pb-lg">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-lg mb-xl">
         <div className="col-span-2 md:col-span-1">
-          <span className="text-primary-fixed font-headline-md font-bold text-headline-md block mb-md">Zenzo</span>
+          <div className="flex items-center gap-xs mb-md">
+            <img src={logo} alt="Zenzo Logo" className="h-8 w-8 object-contain" />
+            <span className="text-primary-fixed font-headline-md font-bold text-headline-md">Zenzo</span>
+          </div>
           <p className="text-on-surface-variant text-body-md mb-md">Empowering Hyderabad's businesses with custom website design, website development, and smart WhatsApp automation.</p>
           <div className="flex gap-sm">
             <a className="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary transition-all text-on-surface" href="#">FB</a>

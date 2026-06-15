@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -7,7 +8,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       const sections = ['home', 'services', 'how-it-works', 'solutions', 'pricing', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
@@ -49,9 +50,12 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant transition-shadow duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="flex justify-between items-center max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop h-16">
-        <div className="flex items-center gap-xs">
-          <span className="text-primary font-headline-md font-bold text-headline-md">Zenzo</span>
-          <span className="hidden md:block text-on-surface-variant font-body-md text-body-md">Business Solutions</span>
+        <div className="flex items-center gap-xs md:gap-sm">
+          <img src={logo} alt="Zenzo Logo" className="h-10 w-10 object-contain" />
+          <div className="flex items-baseline gap-base">
+            <span className="text-primary font-headline-md font-bold text-headline-md">Zenzo</span>
+            <span className="hidden md:block text-on-surface-variant font-body-md text-body-md">Business Solutions</span>
+          </div>
         </div>
         <div className="hidden md:flex items-center gap-md xl:gap-lg">
           {navLinks.map((link) => (
@@ -59,11 +63,10 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleLinkClick(e, link.id)}
-              className={`py-1 transition-all ${
-                activeSection === link.id
+              className={`py-1 transition-all ${activeSection === link.id
                   ? 'text-primary font-bold border-b-2 border-primary'
                   : 'text-on-surface-variant hover:text-primary transition-colors'
-              }`}
+                }`}
             >
               {link.label}
             </a>
